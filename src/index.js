@@ -5,7 +5,28 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 function Hello(props) {
-  return <h1>hello, {props.name}, here is your counter: {props.counter}</h1>;
+  return <h1>hello, {props.name}</h1>;
+}
+function MainContent(props) {
+  return <div>
+    <Hello name="Hsiang" />
+    <h2>{props.counter}</h2>
+  </div>;
+}
+
+function Item(props) {
+  return <div className='item'>
+    <b>Name:</b> {props.name} <br />
+    <b>Price:</b> ${props.price}
+  </div>;
+}
+function MyApp(props) {
+  return <div>
+    <MainContent counter={props.counter} />
+    <Item name='cheese' price='4.99' />
+    <Item name='cheese' price='4.99' />
+    <Item name='cheese' price='4.99' />
+  </div>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +37,7 @@ function show() {
   // In practice, most React apps call ReactDOM.render() once.
   // We will learn how to update elements without calling the render method in the next lessons.
   root.render(
-    <Hello name="Hsiang" counter={counter}/>,
+    <MyApp counter={counter}/>,
     document.getElementById('root')
   )
 }
