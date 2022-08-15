@@ -5,8 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const name = "Hsiang";
+const el = <p>hello, {name}</p>;
+
 root.render(
-  <h1>Hello, React!</h1>,
+  el,
   document.getElementById('root')
 );
 
