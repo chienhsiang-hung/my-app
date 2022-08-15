@@ -10,6 +10,8 @@ const name = "Hsiang";
 let counter = 0;
 function show() {
   counter++;
+  // In practice, most React apps call ReactDOM.render() once.
+  // We will learn how to update elements without calling the render method in the next lessons.
   root.render(
     <h1>hello, {name}, here is your counter: {counter}</h1>,
     document.getElementById('root')
