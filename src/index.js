@@ -4,8 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+function Hello(props) {
+  return <h1>hello, {props.name}, here is your counter: {props.counter}</h1>;
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const name = "Hsiang";
 
 let counter = 0;
 function show() {
@@ -13,7 +16,7 @@ function show() {
   // In practice, most React apps call ReactDOM.render() once.
   // We will learn how to update elements without calling the render method in the next lessons.
   root.render(
-    <h1>hello, {name}, here is your counter: {counter}</h1>,
+    <Hello name="Hsiang" counter={counter}/>,
     document.getElementById('root')
   )
 }
